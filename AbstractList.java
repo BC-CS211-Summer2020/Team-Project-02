@@ -18,45 +18,54 @@ public abstract class AbstractList<E> {
 	 */
 	private int size;
 	
-	public int size() { //returns size
+	// post: returns the current number of elements in the list
+	public int size() {
 	return size;	
 	}
 	
+    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
+    // post: returns the value at the given index in the list
 	public E get(int index) { //returns value at given index
 		
 	}
 	
+	// post : returns the position of the first occurrence of the given
+    //        value (-1 if not found)
 	public int indexOf(E value) { //returns the index of the first appearance of the given value
 		
 	}
 	
+	// post: returns true if list is empty, false otherwise
 	public boolean isEmpty() { //returns true if empty and false if not empty
-		
+        return size == 0;
 	}
 	
+    // post: returns true if the given value is contained in the list,
+    //       false otherwise
 	public boolean contains(E value) { //returns true if the list contains the given value and false if it does not
-		
+        return indexOf(value) >= 0;
 	}
 	
+    // post: appends the given value to the end of the list
 	public void add(E value) { // adds given value to the end of the list
-		
+        add(size, value);
 	}
 	
 	// pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
-    	// post: inserts the given value at the given index, shifting subsequent
-    	//       values right
+	// post: inserts the given value at the given index, shifting subsequent
+	//       values right
 	public void add(int index, E value) {
 		
 	}
 	
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    	// post: removes value at the given index, shifting subsequent values left
+	// post: removes value at the given index, shifting subsequent values left
 	public void remove(int index) {
 		
 	}
 	
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    	// post: replaces the value at the given index with the given value
+	// post: replaces the value at the given index with the given value
 	public void set(int index, E value) {
 		
 	}
@@ -72,10 +81,7 @@ public abstract class AbstractList<E> {
 	}
 	
 	// post: throws an IndexOutOfBoundsException if the given index is
-    	//       not a legal index of the current list
+	//       not a legal index of the current list
 	private void checkIndex(int index) {
 		
 	}
-	
-	// TO-DO: determine whether ArrayList & LinkedList's Iterator objects should be added to abstract superclass
-}
