@@ -101,7 +101,7 @@ public abstract class AbstractList<E> {
 
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post: list is empty
-	public void clear() {
+	public void clear() { // Melina & Angie (will work to see if clear{} method can be in AbstractList class)
 
 	}
 
