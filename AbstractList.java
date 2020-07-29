@@ -1,3 +1,20 @@
+/*CSS 211 Summer 2020
+ * Team #2
+ * Alex Filbert
+ * Diane Lansinger (lead)
+ * Melina Perraut
+ * Zhexiu Tan
+ * Arash Yazdidoost
+ * Angie Zou
+ * 
+ * Team Project #2
+ * Building Java Programs (Reges & Step, 5th edition)
+ * Ch. 16, p. 1027, Programming Exercise #3
+ * TeamProject02
+ *
+ * Final Submission:  08-03-20
+*/
+
 import java.util.*;
 
 public abstract class AbstractList<E> {
