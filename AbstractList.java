@@ -51,25 +51,29 @@ public abstract class AbstractList<E> {
         add(size, value);
 	}
 	
+		// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
-	// post: inserts the given value at the given index, shifting subsequent
-	//       values right
+    // post: inserts the given value at the given index, shifting subsequent
+    //       values right
 	public void add(int index, E value) {
 		
 	}
 	
+	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-	// post: removes value at the given index, shifting subsequent values left
+    // post: removes value at the given index, shifting subsequent values left
 	public void remove(int index) {
 		
 	}
 	
+	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-	// post: replaces the value at the given index with the given value
+    // post: replaces the value at the given index with the given value
 	public void set(int index, E value) {
 		
 	}
 	
+	// *Substantially differs between ArrayList & LinkedList classes
 	// post: list is empty
 	public void clear() {
 		
@@ -77,11 +81,19 @@ public abstract class AbstractList<E> {
 	
 	// post: appends all values in the given list to the end of this list
 	public void addAll(List<E> other) {
-		
+		for (E value: other) {
+            add(value);
+        }
 	}
 	
 	// post: throws an IndexOutOfBoundsException if the given index is
-	//       not a legal index of the current list
+    //       not a legal index of the current list
 	private void checkIndex(int index) {
-		
+		if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("index: " + index);
+        }
 	}
+	
+	// TO-DO: determine whether ArrayList & LinkedList's Iterator objects should be added to abstract superclass
+	
+}
