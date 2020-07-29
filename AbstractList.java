@@ -70,6 +70,7 @@ public abstract class AbstractList<E> {
 		add(size, value);
 	}
 
+	// Diane Lansinger & Arash Yazdidoost
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
 	// post: inserts the given value at the given index, shifting subsequent
@@ -85,6 +86,7 @@ public abstract class AbstractList<E> {
 		}
 	}
 
+	// Diane Lansinger & Arash Yazdidoost
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
 	// post: removes value at the given index, shifting subsequent values left
@@ -92,6 +94,7 @@ public abstract class AbstractList<E> {
 
 	}
 
+	// Diane Lansinger & Arash Yazdidoost
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
 	// post: replaces the value at the given index with the given value
