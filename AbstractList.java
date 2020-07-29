@@ -1,3 +1,5 @@
+import java.util.*;
+
 public abstract class AbstractList<E> {
 
 	/*
@@ -52,6 +54,13 @@ public abstract class AbstractList<E> {
 	public void add(int index, E value) {
 
 	}
+	
+	// post: appends all values in the given list to the end of this list
+	public void addAll(List<E> other) {
+		for (E value : other) {
+			add(value);
+		}
+	}
 
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
@@ -71,13 +80,6 @@ public abstract class AbstractList<E> {
 	// post: list is empty
 	public void clear() {
 
-	}
-
-	// post: appends all values in the given list to the end of this list
-	public void addAll(List<E> other) {
-		for (E value : other) {
-			add(value);
-		}
 	}
 
 	// post: throws an IndexOutOfBoundsException if the given index is
