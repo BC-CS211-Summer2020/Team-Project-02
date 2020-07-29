@@ -26,7 +26,7 @@ public abstract class AbstractList<E> {
 	 * remove(int index); public void set(int index, E value); public void clear();
 	 * addAll(list<E> name); checkIndex(int index); class iterator & iterator();
 	 */
-	private int size;
+	protected int size;
 
 	// post: returns the current number of elements in the list
 	public int size() {
