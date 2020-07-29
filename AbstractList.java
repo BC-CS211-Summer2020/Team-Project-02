@@ -12,6 +12,9 @@ public abstract class AbstractList<E> {
     public void remove(int index);
     public void set(int index, E value);
     public void clear();
+    addAll(list<E> name);
+    checkIndex(int index);
+    class iterator & iterator();
 	 */
 	private int size;
 	
@@ -19,4 +22,5 @@ public abstract class AbstractList<E> {
 		
 	}
 	
+	public E get(int index)
 }
