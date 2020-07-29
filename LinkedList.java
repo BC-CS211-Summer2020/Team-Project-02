@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class LinkedList<E> implements List<E> {
+public class LinkedList<E> extend AbstractList<E> {
     private ListNode<E> front;  // first value in the list
     private ListNode<E> back;   // last value in the list
     private int size;           // current number of elements
