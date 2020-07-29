@@ -46,6 +46,12 @@ public abstract class AbstractList<E> {
 	public int indexOf(E value) { // returns the index of the first appearance of the given value
 
 	}
+	
+	// *Substantially differs between ArrayList & LinkedList classes
+	// post: creates a comma-separated, bracketed version of the list
+	public String toString() {
+		
+	}
 
 	// post: returns true if list is empty, false otherwise
 	public boolean isEmpty() { // returns true if empty and false if not empty
