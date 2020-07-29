@@ -1,5 +1,3 @@
-package teamProject02;
-
 public abstract class AbstractList<E> {
 
 	/*
@@ -15,5 +13,10 @@ public abstract class AbstractList<E> {
     public void set(int index, E value);
     public void clear();
 	 */
+	private int size;
+	
+	public int size() {
+		
+	}
 	
 }
