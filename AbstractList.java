@@ -36,20 +36,20 @@ public abstract class AbstractList<E> {
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
 	// post: returns the value at the given index in the list
-	public E get(int index) { // returns value at given index
+	public E get(int index) { // ZheXiu Tan, Alex Filbert
 
 	}
 
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post : returns the position of the first occurrence of the given
 	// value (-1 if not found)
-	public int indexOf(E value) { // returns the index of the first appearance of the given value
+	public int indexOf(E value) { // ZheXiu Tan, Alex Filbert
 
 	}
 	
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post: creates a comma-separated, bracketed version of the list
-	public String toString() {
+	public String toString() { // ZheXiu Tan, Alex Filbert
 		
 	}
 
