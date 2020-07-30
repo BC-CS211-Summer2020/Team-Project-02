@@ -38,7 +38,7 @@ public abstract class AbstractList<E> implements List<E> {
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
 	// post: returns the value at the given index in the list
 	public E get(int index) { // ZheXiu Tan, Alex Filbert
-		Iterator<E> iter = Iterator();
+		Iterator<E> iter = iterator();
 		int idx = -1;
 		while (iter.hasNext()) {
 			idx++;
@@ -53,7 +53,7 @@ public abstract class AbstractList<E> implements List<E> {
 	// value (-1 if not found)
 	public int indexOf(E value) { // ZheXiu Tan, Alex Filbert
 		int index = 0;
-		Iterator<E> iter = Iterator();
+		Iterator<E> iter = iterator();
 		while (iter.hasNext()) {
 			index++;
 			if (value.equals(iter.next())) return index;
