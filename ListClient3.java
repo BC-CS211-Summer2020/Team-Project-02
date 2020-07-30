@@ -20,13 +20,13 @@ public class ListClient3 {
         
         System.out.println("Size of original list: " + list.size());
         System.out.println("Value at index 1 of original list: " + list.get(1));
-        System.out.println("Value at index 5 of original list: " + list.get(1)); // Should throw IndexOutOfBoundsException
+        System.out.println("Value at index 5 of original list: " + list.get(5)); // Should throw IndexOutOfBoundsException
         System.out.println("Position of first occurrence of 18 in original list: " + list.indexOf(18));
         System.out.println("Position of first occurrence of -5 in original list: " + list.indexOf(-5)); // Should return -1
         System.out.println("Does the original list contain 93? " + list.contains(93));
         System.out.println("Does the original list contain 26? " + list.contains(26)); 
         System.out.println("Is the list currently empty? " + list.isEmpty());
-        // (Will add more)
+        // To test from AbstractList class: addAll(List<E> other), set(int index, E value)
         
         list.remove(2);
         list.remove(0);
