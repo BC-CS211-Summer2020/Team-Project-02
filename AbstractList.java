@@ -92,7 +92,8 @@ public abstract class AbstractList<E> implements List<E> {
 	// *Differs between ArrayList & LinkedList classes
 	// post: appends the given value to the end of the list (index of added value = size)
 	public void add(E value) {
-        add(size, value);
+		add(value); //adjusted from add(size,value);
+		size++;     //added size++;
     }
 		
 	// Diane Lansinger, Arash Yazdidoost
@@ -102,6 +103,7 @@ public abstract class AbstractList<E> implements List<E> {
 	// values right
 	public void add(int index, E value){
 		checkIndex(index);
+		add(index,value); //added add(index,value);
 		size++;
 	}
 	
