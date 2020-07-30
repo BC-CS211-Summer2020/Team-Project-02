@@ -1,11 +1,11 @@
 /*CSS 211 Summer 2020
  * Team #2
  * Alex Filbert
- * Diane Lansinger (lead)
- * Melina Perraut
+ * Diane Lansinger (project lead)
+ * Melina Perraut (code co-lead)
  * Zhexiu Tan
  * Arash Yazdidoost
- * Angie Zou
+ * Angie Zou (code co-lead)
  * 
  * Team Project #2
  * Building Java Programs (Reges & Step, 5th edition)
@@ -17,7 +17,8 @@
 
 import java.util.*;
 
-public abstract class AbstractList<E> {
+// Diane Lansinger - implemented List<E>
+public abstract class AbstractList<E> implements List<E> {
 
 	/*
 	 * methods: public int size(); public E get(int index); public int indexOf(E
@@ -64,20 +65,23 @@ public abstract class AbstractList<E> {
 		return indexOf(value) >= 0;
 	}
 
+	// Diane Lansinger, Arash Yazdidoost
 	// *Differs between ArrayList & LinkedList classes
-	// post: appends the given value to the end of the list
-	public void add(E value) { // adds given value to the end of the list
-		add(size, value);
-	}
-
-	// Diane Lansinger & Arash Yazdidoost
+	// post: appends the given value to the end of the list (index of added value = size)
+	public void add(E value) {
+        add(size, value);
+    }
+		
+	// Diane Lansinger, Arash Yazdidoost
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
 	// post: inserts the given value at the given index, shifting subsequent
 	// values right
-	public void add(int index, E value) {
-
+	public void add(int index, E value){
+		checkIndex(index);
+		size++;
 	}
+	
 	
 	// post: appends all values in the given list to the end of this list
 	public void addAll(List<E> other) {
@@ -86,20 +90,28 @@ public abstract class AbstractList<E> {
 		}
 	}
 
-	// Diane Lansinger & Arash Yazdidoost
+	// Diane Lansinger, Arash, Yazdidoost
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
 	// post: removes value at the given index, shifting subsequent values left
-	public void remove(int index) {
+	public void remove(int index){
+		checkIndex(index);
+		Iterator<E> i = iterator();
 
+		while (index-- > 1){
+			i.next();
+		}
+		i.remove();
+		size--;
 	}
+	
 
-	// Diane Lansinger & Arash Yazdidoost
+	// Diane Lansinger, Arash, Yazdidoost
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
 	// post: replaces the value at the given index with the given value
 	public void set(int index, E value) {
-
+		checkIndex(index);
 	}
 
 	// *Substantially differs between ArrayList & LinkedList classes
@@ -115,4 +127,9 @@ public abstract class AbstractList<E> {
 			throw new IndexOutOfBoundsException("index: " + index);
 		}
 	}
+
+	// Diane Lansinger
+	// added for remove() method
+	// contract:  subclasses must implement this method
+	public abstract Iterator<E> iterator();
 }

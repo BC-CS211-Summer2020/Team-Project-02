@@ -69,23 +69,28 @@ public class LinkedList<E> extends AbstractList<E> {
         return indexOf(value) >= 0;
     }
 
+    // Diane Lansinger & Arash Yazdidoost
+    // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
-    public void add(E value) {
+    /* public void add(E value) {
         add(size, value);
-    }
+    } */
 
+    // Diane Lansinger & Arash Yazdidoost
     // pre: 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
     //       values right
     public void add(int index, E value) {
-        if (index < 0 || index > size) {
+        // block commented out below, will be handled via AbstractList
+        /* if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index: " + index);
-        }
+        } */
+        super.add(index, value); // super calls AbstractList
         ListNode<E> current = nodeAt(index - 1);
         ListNode<E> newNode = new ListNode<E>(value, current.next, current);
         current.next = newNode;
         newNode.next.prev = newNode;
-        size++;
+        /* size++; */
     }
 
     // post: appends all values in the given list to the end of this list
@@ -95,21 +100,25 @@ public class LinkedList<E> extends AbstractList<E> {
         }
     }
 
+    // Diane Lansinger & Arash Yazdidoost
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: removes value at the given index, shifting subsequent values left
-    public void remove(int index) {
+    // block commented out below, will be handled via AbstractList
+    /*public void remove(int index) {        
         checkIndex(index);
+        super.remove(index);  // super calls AbstractList
         ListNode<E> current = nodeAt(index - 1);
         current.next = current.next.next;
         current.next.prev = current;
         size--;
-    }
+    }*/
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: replaces the value at the given index with the given value
     public void set(int index, E value) {
-        checkIndex(index);
-        ListNode<E> current = nodeAt(index);
+       /*  checkIndex(index); */
+       super.set(index, value); 
+       ListNode<E> current = nodeAt(index);
         current.data = value;
     }
 
@@ -198,9 +207,10 @@ public class LinkedList<E> extends AbstractList<E> {
             return result;
         }
 
+        // Diane Lansinger & Arash Yazdidoost        
         // pre : next() has been called without a call on remove (i.e., at most
         //       one call per call on next)
-        // post: removes the last element returned by the iterator
+        // post: removes the last element returned by the iterator        
         public void remove() {
             if (!removeOK) {
                 throw new IllegalStateException();
@@ -208,7 +218,7 @@ public class LinkedList<E> extends AbstractList<E> {
             ListNode<E> prev2 = current.prev.prev;
             prev2.next = current;
             current.prev = prev2;
-            size--;
+            /* size--; */  // block commented out, will be handled via AbstractList
             removeOK = false;
         }
     }

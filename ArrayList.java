@@ -72,43 +72,54 @@ public class ArrayList<E> extends AbstractList<E> {
         return indexOf(value) >= 0;
     }
 
+    // Diane Lansinger & Arash Yazdidoost
+    // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
-    public void add(E value) {
+    /* public void add(E value) {
         ensureCapacity(size + 1);
         elementData[size] = value;
         size++;
-    }
+    } */
 
+    // Diane Lansinger & Arash Yazdidoost
     // pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
     //       values right
     public void add(int index, E value) {
-        if (index < 0 || index > size) {
+        // block commented out below, will be handled via AbstractList
+        /* if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index: " + index);
-        }
+        } */
+        super.add(index, value); // super calls AbstractList
         ensureCapacity(size + 1);
         for (int i = size; i >= index + 1; i--) {
             elementData[i] = elementData[i - 1];
         }
         elementData[index] = value;
-        size++;
+        /* size++; */
     }
 
+    
+    // Diane Lansinger & Arash Yazdidoost
+    // block commented out below, moved key part to ArrayList Interator
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: removes value at the given index, shifting subsequent values left
-    public void remove(int index) {
+   /*  public void remove(int index) {
         checkIndex(index);
         for (int i = index; i < size - 1; i++) {
             elementData[i] = elementData[i + 1];
         }
         elementData[size - 1] = null;
         size--;
-    }
+    } */
 
+    // Diane Lansinger & Arash Yazdidoost
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: replaces the value at the given index with the given value
     public void set(int index, E value) {
-        checkIndex(index);
+        // block commented out below, will be handled via AbstractList
+        /* checkIndex(index); */
+        super.set(index, value); // super calls AbstractList
         elementData[index] = value;
     }
 
@@ -186,8 +197,11 @@ public class ArrayList<E> extends AbstractList<E> {
             if (!removeOK) {
                 throw new IllegalStateException();
             }
-            ArrayList.this.remove(position - 1);
-            position--;
+            //ArrayList.this.remove(position - 1);   // replaced with for-loop below
+            for (int i = --position; i < size - 1; i++) { // moved from remove() method
+                elementData[i] = elementData[i + 1]; // ""
+            }                                        // ""
+            elementData[size - 1] = null;            // ""
             removeOK = false;
         }
     }
