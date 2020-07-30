@@ -20,7 +20,13 @@ public class ListClient3 {
         
         System.out.println("Size of original list: " + list.size());
         System.out.println("Value at index 1 of original list: " + list.get(1));
-        System.out.println("Value at index 5 of original list: " + list.get(5)); // Should throw IndexOutOfBoundsException
+        try{ //Diane - added try/catch
+            System.out.println("Value at index 5 of original list: " + list.get(5)); // Should throw IndexOutOfBoundsException
+            System.out.println("Failure: no exception thrown.");
+        } catch (Exception e) {
+            System.out.println("Success: threw " + e.toString()); 
+        }
+        
         System.out.println("Position of first occurrence of 18 in original list: " + list.indexOf(18));
         System.out.println("Position of first occurrence of -5 in original list: " + list.indexOf(-5)); // Should return -1
         System.out.println("Does the original list contain 93? " + list.contains(93));

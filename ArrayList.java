@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ArrayList<E> extends AbstractList<E> {
     private E[] elementData; // list of values
-    private int size;        // current number of elements in the list
+    //private int size;      // Diane - removed this, will use super class (AbstractList) size declaration
 
     public static final int DEFAULT_CAPACITY = 100;
 
@@ -198,7 +198,7 @@ public class ArrayList<E> extends AbstractList<E> {
                 throw new IllegalStateException();
             }
             //ArrayList.this.remove(position - 1);   // replaced with for-loop below
-            for (int i = --position; i < size - 1; i++) { // moved from remove() method
+            for (int i = position; i < size - 1; i++) { // moved from remove() method
                 elementData[i] = elementData[i + 1]; // ""
             }                                        // ""
             elementData[size - 1] = null;            // ""

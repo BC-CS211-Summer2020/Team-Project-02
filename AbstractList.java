@@ -92,8 +92,7 @@ public abstract class AbstractList<E> implements List<E> {
 	// *Differs between ArrayList & LinkedList classes
 	// post: appends the given value to the end of the list (index of added value = size)
 	public void add(E value) {
-		add(value); //adjusted from add(size,value);
-		size++;     //added size++;
+		add(size, value); //issue here was based on error in checkIndex - see comment below
     }
 		
 	// Diane Lansinger, Arash Yazdidoost
@@ -102,8 +101,7 @@ public abstract class AbstractList<E> implements List<E> {
 	// post: inserts the given value at the given index, shifting subsequent
 	// values right
 	public void add(int index, E value){
-		checkIndex(index);
-		add(index,value); //added add(index,value);
+		checkIndex(index);		
 		size++;
 	}
 	
@@ -123,7 +121,7 @@ public abstract class AbstractList<E> implements List<E> {
 		checkIndex(index);
 		Iterator<E> i = iterator();
 
-		while (index-- > 1){
+		while (index-- > 0){
 			i.next();
 		}
 		i.remove();
@@ -148,7 +146,7 @@ public abstract class AbstractList<E> implements List<E> {
 	// post: throws an IndexOutOfBoundsException if the given index is
 	// not a legal index of the current list
 	private void checkIndex(int index) {
-		if (index < 0 || index >= size()) {
+		if (index < 0 || index > size()) {  //Diane - changed from index >= size() to index > size()
 			throw new IndexOutOfBoundsException("index: " + index);
 		}
 	}
