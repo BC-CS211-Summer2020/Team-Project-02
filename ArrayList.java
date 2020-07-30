@@ -91,12 +91,13 @@ public class ArrayList<E> extends AbstractList<E> {
         /* if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index: " + index);
         } */
-        super.add(index, value); // super calls AbstractList
+        //super.add(index, value); // super calls AbstractList
         ensureCapacity(size + 1);
         for (int i = size; i >= index + 1; i--) {
             elementData[i] = elementData[i - 1];
         }
         elementData[index] = value;
+        super.add(index, value); // super calls AbstractList - CHANGED POSITION
         //size++;
     }
 
