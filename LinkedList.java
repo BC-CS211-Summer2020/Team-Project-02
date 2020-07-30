@@ -72,9 +72,9 @@ public class LinkedList<E> extends AbstractList<E> {
     // Diane Lansinger & Arash Yazdidoost
     // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
-    public void add(E value) {
+    /* public void add(E value) {
         add(size, value);
-    } 
+    }  */
 
     // Diane Lansinger & Arash Yazdidoost
     // pre: 0 <= index <= size() (throws IndexOutOfBoundsException if not)
@@ -187,7 +187,7 @@ public class LinkedList<E> extends AbstractList<E> {
         // post: constructs an iterator for the given list
         public LinkedIterator() {
             current = front.next;
-            removeOK = false;
+            removeOK = true;  //Diane - changed from false to true
         }
 
         // post: returns true if there are more elements left, false otherwise
@@ -215,10 +215,13 @@ public class LinkedList<E> extends AbstractList<E> {
             if (!removeOK) {
                 throw new IllegalStateException();
             }
-            ListNode<E> prev2 = current.prev.prev;
+            /* ListNode<E> prev2 = current.prev.prev;
             prev2.next = current;
-            current.prev = prev2;
+            current.prev = prev2; */
             /* size--; */  // block commented out, will be handled via AbstractList
+            ListNode<E> prev = current.prev;
+            prev.next = current.next;
+            current.next.prev = prev;
             removeOK = false;
         }
     }

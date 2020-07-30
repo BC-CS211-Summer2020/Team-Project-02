@@ -125,7 +125,7 @@ public abstract class AbstractList<E> implements List<E> {
 			i.next();
 		}
 		i.remove();
-		//size--;
+		size--;
 	}
 	
 
