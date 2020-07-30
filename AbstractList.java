@@ -38,40 +38,43 @@ public abstract class AbstractList<E> implements List<E> {
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
 	// post: returns the value at the given index in the list
 	public E get(int index) { // ZheXiu Tan, Alex Filbert
-
-		Iterator<E> it = Iterator();
+		Iterator<E> iter = Iterator();
 		int idx = -1;
-		while (it.hasNext())
-		{
+		while (iter.hasNext()) {
 			idx++;
-			E item = it.next();
+			E item = iter.next();
 			if (idx == index) return item;
 		}
-
-        return null;
+        	return null;
 	}
 
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post : returns the position of the first occurrence of the given
 	// value (-1 if not found)
 	public int indexOf(E value) { // ZheXiu Tan, Alex Filbert
-		
-		Iterator<E> it = Iterator();
-		int index = -1;
-		while (it.hasNext())
-		{
+		int index = 0;
+		Iterator<E> iter = Iterator();
+		while (iter.hasNext()) {
 			index++;
-			if (value.equals(it.next())) return index;
+			if (value.equals(iter.next())) return index;
 		}
-
-        return -1;
-        
+        	return -1;
 	}
 	
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post: creates a comma-separated, bracketed version of the list
 	public String toString() { // ZheXiu Tan, Alex Filbert
-		
+		if(size == 0) {
+    			return "[]";
+    		} else {
+    			Iterator<E> iter = iterator();
+    			String result = "[" + iter.next();
+    			while(iter.hasNext()) {
+    				result += ", " + iter.next();
+    			}
+    			result += "]";
+    			return result;
+    		}
 	}
 
 	// post: returns true if list is empty, false otherwise
