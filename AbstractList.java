@@ -39,13 +39,33 @@ public abstract class AbstractList<E> implements List<E> {
 	// post: returns the value at the given index in the list
 	public E get(int index) { // ZheXiu Tan, Alex Filbert
 
+		Iterator<E> it = Iterator();
+		int idx = -1;
+		while (it.hasNext())
+		{
+			idx++;
+			E item = it.next();
+			if (idx == index) return item;
+		}
+
+        return null;
 	}
 
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post : returns the position of the first occurrence of the given
 	// value (-1 if not found)
 	public int indexOf(E value) { // ZheXiu Tan, Alex Filbert
+		
+		Iterator<E> it = Iterator();
+		int index = -1;
+		while (it.hasNext())
+		{
+			index++;
+			if (value.equals(it.next())) return index;
+		}
 
+        return -1;
+        
 	}
 	
 	// *Substantially differs between ArrayList & LinkedList classes
