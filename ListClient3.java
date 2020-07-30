@@ -4,10 +4,20 @@
 public class ListClient3 {
     public static void main(String[] args) {
         ArrayList<Integer> list1 = new ArrayList<Integer>();
+        List<Integer> newList1 = new ArrayList<Integer>();
+        
+        newList1.add(42);
+        list1.addAll(newList1); // Testing addAll method within main method
+        
         processList(list1);
         System.out.println();
 
         LinkedList<Integer> list2 = new LinkedList<Integer>();
+        List<Integer> newList2 = new LinkedList<Integer>();
+        
+        newList2.add(42);
+        list2.addAll(newList2); // Testing addAll method within main method
+        
         processList(list2);
     }
 
@@ -26,8 +36,9 @@ public class ListClient3 {
         System.out.println("Does the original list contain 93? " + list.contains(93));
         System.out.println("Does the original list contain 26? " + list.contains(26)); 
         System.out.println("Is the list currently empty? " + list.isEmpty());
-        // To test from AbstractList class: addAll(List<E> other), set(int index, E value)
-        
+        list.set(0, 24);
+        System.out.println("Altered list after setting index 0 of list to 24: " + list.toString());
+                
         list.remove(2);
         list.remove(0);
         System.out.println("Altered list after removing values at index 2 and 0: " + list.toString());
