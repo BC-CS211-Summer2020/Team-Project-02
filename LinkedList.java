@@ -72,9 +72,9 @@ public class LinkedList<E> extends AbstractList<E> {
     // Diane Lansinger & Arash Yazdidoost
     // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
-    /* public void add(E value) {
+    public void add(E value) {
         add(size, value);
-    } */
+    } 
 
     // Diane Lansinger & Arash Yazdidoost
     // pre: 0 <= index <= size() (throws IndexOutOfBoundsException if not)
@@ -90,7 +90,7 @@ public class LinkedList<E> extends AbstractList<E> {
         ListNode<E> newNode = new ListNode<E>(value, current.next, current);
         current.next = newNode;
         newNode.next.prev = newNode;
-        /* size++; */
+        //size++;
     }
 
     // post: appends all values in the given list to the end of this list

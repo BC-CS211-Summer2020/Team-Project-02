@@ -75,11 +75,12 @@ public class ArrayList<E> extends AbstractList<E> {
     // Diane Lansinger & Arash Yazdidoost
     // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
-    /* public void add(E value) {
+    public void add(E value) {
         ensureCapacity(size + 1);
-        elementData[size] = value;
+        elementData[size] = value;    
+        //super.add(value);    
         size++;
-    } */
+    }
 
     // Diane Lansinger & Arash Yazdidoost
     // pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
@@ -96,7 +97,7 @@ public class ArrayList<E> extends AbstractList<E> {
             elementData[i] = elementData[i - 1];
         }
         elementData[index] = value;
-        /* size++; */
+        //size++;
     }
 
     
