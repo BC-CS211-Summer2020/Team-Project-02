@@ -142,7 +142,7 @@ public abstract class AbstractList<E> implements List<E> {
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post: list is empty
 	public void clear() { // Melina & Angie (will work to see if clear{} method can be in AbstractList class)
-
+		size = 0;
 	}
 
 	// post: throws an IndexOutOfBoundsException if the given index is
