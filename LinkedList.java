@@ -85,11 +85,12 @@ public class LinkedList<E> extends AbstractList<E> {
         /* if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index: " + index);
         } */
-        super.add(index, value); // super calls AbstractList
+        //super.add(index, value); // super calls AbstractList
         ListNode<E> current = nodeAt(index - 1);
         ListNode<E> newNode = new ListNode<E>(value, current.next, current);
         current.next = newNode;
         newNode.next.prev = newNode;
+	super.add(index, value); // super calls AbstractList - CHANGED POSITION
         //size++;
     }
 
