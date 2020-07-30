@@ -16,9 +16,20 @@ public class ListClient3 {
         list.add(18);
         list.add(27);
         list.add(93);
-        System.out.println(list);
+        System.out.println("Original list: " + list);
+        
+        System.out.println("Size of original list: " + list.size());
+        System.out.println("Value at index 1 of original list: " + list.get(1));
+        System.out.println("Value at index 5 of original list: " + list.get(1)); // Should throw IndexOutOfBoundsException
+        System.out.println("Position of first occurrence of 18 in original list: " + list.indexOf(18));
+        System.out.println("Position of first occurrence of -5 in original list: " + list.indexOf(-5)); // Should return -1
+        // (Will add more)
+        
         list.remove(2);
         list.remove(0);
-        System.out.println(list);
+        System.out.println("Altered list after removing values at index 2 and 0: " + list);
+        
+        list.clear();
+        System.out.println("Altered list after clearing all values: " + list);
     }
 }
