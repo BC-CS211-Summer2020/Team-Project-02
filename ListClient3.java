@@ -22,7 +22,6 @@ public class ListClient3 {
     }
 
     public static void processList(List<Integer> list) { // Melina Perraut (added additional test cases and println statements)
-        list.add(42);
         list.add(18);
         list.add(93);
         list.add(2, 27); // Adding value at an index
