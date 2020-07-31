@@ -14,11 +14,12 @@
  *
  * Final Submission:  08-03-20
  *
- * Abstract superclass called AbstractList - implements the common behavior between ArrayList and LinkedList classes
+ * Abstract superclass called AbstractList - implements the common behavior between ArrayList and LinkedList classes (extended by both)
 */
 
 import java.util.*;
 
+// Melina Perraut and Angela Zou - wrote skeleton code & overlapping methods for AbstractList class
 // Diane Lansinger - implemented List<E>
 public abstract class AbstractList<E> implements List<E> {
 
