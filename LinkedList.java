@@ -143,7 +143,8 @@ public class LinkedList<E> extends AbstractList<E> {
     public void clear() {
         front.next = back;
         back.prev = front;
-        size = 0;
+        //size = 0;
+        super.clear();
     }
 
     // post: returns an iterator for this list
