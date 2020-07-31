@@ -1,4 +1,21 @@
-// Class LinkedList<E> can be used to store a list of values of type E.
+/*CSS 211 Summer 2020
+ * Team #2
+ * Alex Filbert
+ * Diane Lansinger (project lead)
+ * Melina Perraut (code co-lead)
+ * Zhexiu Tan
+ * Arash Yazdidoost
+ * Angie Zou (code co-lead)
+ * 
+ * Team Project #2
+ * Building Java Programs (Reges & Step, 5th edition)
+ * Ch. 16, p. 1027, Programming Exercise #3
+ * TeamProject02
+ *
+ * Final Submission:  08-03-20
+ *
+ * Class LinkedList<E> - can be used to store a list of values of type E, altered to extend AbstractList<E>
+*/
 
 import java.util.*;
 
