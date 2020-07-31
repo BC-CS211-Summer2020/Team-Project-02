@@ -4,7 +4,8 @@ import java.util.*;
 
 public class ArrayList<E> extends AbstractList<E> {
     private E[] elementData; // list of values
-    //private int size;      // Diane - removed this, will use super class (AbstractList) size declaration
+    // private int size; // Diane - removed this, will use super class
+    // (AbstractList) size declaration
 
     public static final int DEFAULT_CAPACITY = 100;
 
@@ -51,7 +52,7 @@ public class ArrayList<E> extends AbstractList<E> {
     }
 
     // post : returns the position of the first occurrence of the given
-    //        value (-1 if not found)
+    // value (-1 if not found)
     public int indexOf(E value) {
         for (int i = 0; i < size; i++) {
             if (elementData[i].equals(value)) {
@@ -67,7 +68,7 @@ public class ArrayList<E> extends AbstractList<E> {
     }
 
     // post: returns true if the given value is contained in the list,
-    //       false otherwise
+    // false otherwise
     public boolean contains(E value) {
         return indexOf(value) >= 0;
     }
@@ -75,45 +76,40 @@ public class ArrayList<E> extends AbstractList<E> {
     // Diane Lansinger & Arash Yazdidoost
     // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
-    /* public void add(E value) {
-        ensureCapacity(size + 1);
-        elementData[size] = value;    
-        //super.add(value);    
-        size++;
-    } */
+    /*
+     * public void add(E value) { ensureCapacity(size + 1); elementData[size] =
+     * value; //super.add(value); size++; }
+     */
 
     // Diane Lansinger & Arash Yazdidoost
     // pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
-    //       values right
+    // values right
     public void add(int index, E value) {
         // block commented out below, will be handled via AbstractList
-        /* if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("index: " + index);
-        } */
-        //super.add(index, value); // super calls AbstractList
+        /*
+         * if (index < 0 || index > size) { throw new
+         * IndexOutOfBoundsException("index: " + index); }
+         */
+        // super.add(index, value); // super calls AbstractList
         ensureCapacity(size + 1);
         for (int i = size; i >= index + 1; i--) {
             elementData[i] = elementData[i - 1];
         }
         elementData[index] = value;
         super.add(index, value); // super calls AbstractList - CHANGED POSITION
-        //size++;
+        // size++;
     }
 
-    
     // Diane Lansinger & Arash Yazdidoost
     // block commented out below, moved key part to ArrayList Interator
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: removes value at the given index, shifting subsequent values left
-   /*  public void remove(int index) {
-        checkIndex(index);
-        for (int i = index; i < size - 1; i++) {
-            elementData[i] = elementData[i + 1];
-        }
-        elementData[size - 1] = null;
-        size--;
-    } */
+    /*
+     * public void remove(int index) { checkIndex(index); for (int i = index; i <
+     * size - 1; i++) { elementData[i] = elementData[i + 1]; } elementData[size - 1]
+     * = null; size--; }
+     */
 
     // Diane Lansinger & Arash Yazdidoost
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
@@ -135,7 +131,7 @@ public class ArrayList<E> extends AbstractList<E> {
 
     // post: appends all values in the given list to the end of this list
     public void addAll(List<E> other) {
-        for (E value: other) {
+        for (E value : other) {
             add(value);
         }
     }
@@ -146,7 +142,7 @@ public class ArrayList<E> extends AbstractList<E> {
     }
 
     // post: ensures that the underlying array has the given capacity; if not,
-    //       the size is doubled (or more if given capacity is even larger)
+    // the size is doubled (or more if given capacity is even larger)
     public void ensureCapacity(int capacity) {
         if (capacity > elementData.length) {
             int newCapacity = elementData.length * 2 + 1;
@@ -158,7 +154,7 @@ public class ArrayList<E> extends AbstractList<E> {
     }
 
     // post: throws an IndexOutOfBoundsException if the given index is
-    //       not a legal index of the current list
+    // not a legal index of the current list
     private void checkIndex(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("index: " + index);
@@ -166,13 +162,13 @@ public class ArrayList<E> extends AbstractList<E> {
     }
 
     private class ArrayListIterator implements Iterator<E> {
-        private int position;           // current position within the list
-        private boolean removeOK;       // whether it's okay to remove now
+        private int position; // current position within the list
+        private boolean removeOK; // whether it's okay to remove now
 
         // post: constructs an iterator for the given list
         public ArrayListIterator() {
             position = 0;
-            removeOK = true; //Diane - changed from false to true
+            removeOK = true; // Diane - changed from false to true
         }
 
         // post: returns true if there are more elements left, false otherwise
@@ -193,17 +189,17 @@ public class ArrayList<E> extends AbstractList<E> {
         }
 
         // pre : next() has been called without a call on remove (throws
-        //       IllegalStateException if not)
+        // IllegalStateException if not)
         // post: removes the last element returned by the iterator
         public void remove() {
             if (!removeOK) {
                 throw new IllegalStateException();
             }
-            //ArrayList.this.remove(position - 1);   // replaced with for-loop below
+            // ArrayList.this.remove(position - 1); // replaced with for-loop below
             for (int i = position; i < size - 1; i++) { // moved from remove() method
                 elementData[i] = elementData[i + 1]; // ""
-            }                                        // ""
-            elementData[size - 1] = null;            // ""
+            } // ""
+            elementData[size - 1] = null; // ""
             removeOK = false;
         }
     }

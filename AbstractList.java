@@ -43,38 +43,42 @@ public abstract class AbstractList<E> implements List<E> {
 		while (iter.hasNext()) {
 			idx++;
 			E item = iter.next();
-			if (idx == index) return item;
+			if (idx == index)
+				return item;
 		}
-        	return null;
+
+		return null;
 	}
 
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post : returns the position of the first occurrence of the given
 	// value (-1 if not found)
 	public int indexOf(E value) { // ZheXiu Tan, Alex Filbert
-		int index = 0;
+		int index = -1;
 		Iterator<E> iter = iterator();
 		while (iter.hasNext()) {
 			index++;
-			if (value.equals(iter.next())) return index;
+			if (value.equals(iter.next()))
+				return index;
 		}
-        	return -1;
+
+		return -1;
 	}
-	
+
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post: creates a comma-separated, bracketed version of the list
 	public String toString() { // ZheXiu Tan, Alex Filbert
-		if(size == 0) {
-    			return "[]";
-    		} else {
-    			Iterator<E> iter = iterator();
-    			String result = "[" + iter.next();
-    			while(iter.hasNext()) {
-    				result += ", " + iter.next();
-    			}
-    			result += "]";
-    			return result;
-    		}
+		if (size == 0) {
+			return "[]";
+		} else {
+			Iterator<E> iter = iterator();
+			String result = "[" + iter.next();
+			while (iter.hasNext()) {
+				result += ", " + iter.next();
+			}
+			result += "]";
+			return result;
+		}
 	}
 
 	// post: returns true if list is empty, false otherwise
@@ -90,22 +94,22 @@ public abstract class AbstractList<E> implements List<E> {
 
 	// Diane Lansinger, Arash Yazdidoost
 	// *Differs between ArrayList & LinkedList classes
-	// post: appends the given value to the end of the list (index of added value = size)
+	// post: appends the given value to the end of the list (index of added value =
+	// size)
 	public void add(E value) {
-		add(size, value); //issue here was based on error in checkIndex - see comment below
-    }
-		
+		add(size, value); // issue here was based on error in checkIndex - see comment below
+	}
+
 	// Diane Lansinger, Arash Yazdidoost
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
 	// post: inserts the given value at the given index, shifting subsequent
 	// values right
-	public void add(int index, E value){
-		checkIndex(index);		
+	public void add(int index, E value) {
+		checkIndex(index);
 		size++;
 	}
-	
-	
+
 	// post: appends all values in the given list to the end of this list
 	public void addAll(List<E> other) {
 		for (E value : other) {
@@ -117,17 +121,16 @@ public abstract class AbstractList<E> implements List<E> {
 	// *Substantially differs between ArrayList & LinkedList classes
 	// pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
 	// post: removes value at the given index, shifting subsequent values left
-	public void remove(int index){
+	public void remove(int index) {
 		checkIndex(index);
 		Iterator<E> i = iterator();
 
-		while (index-- > 0){
+		while (index-- > 0) {
 			i.next();
 		}
 		i.remove();
 		size--;
 	}
-	
 
 	// Diane Lansinger, Arash, Yazdidoost
 	// *Substantially differs between ArrayList & LinkedList classes
@@ -139,20 +142,21 @@ public abstract class AbstractList<E> implements List<E> {
 
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post: list is empty
-	public void clear() { // Melina & Angie (will work to see if clear{} method can be in AbstractList class)
+	public void clear() { // Melina & Angie (will work to see if clear{} method can be in AbstractList
+							// class)
 		size = 0;
 	}
 
 	// post: throws an IndexOutOfBoundsException if the given index is
 	// not a legal index of the current list
 	private void checkIndex(int index) {
-		if (index < 0 || index > size()) {  //Diane - changed from index >= size() to index > size()
+		if (index < 0 || index > size()) { // Diane - changed from index >= size() to index > size()
 			throw new IndexOutOfBoundsException("index: " + index);
 		}
 	}
 
 	// Diane Lansinger
 	// added for remove() method
-	// contract:  subclasses must implement this method
+	// contract: subclasses must implement this method
 	public abstract Iterator<E> iterator();
 }
