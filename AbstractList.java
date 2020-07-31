@@ -13,6 +13,8 @@
  * TeamProject02
  *
  * Final Submission:  08-03-20
+ *
+ * Abstract superclass called AbstractList - implements the common behavior between ArrayList and LinkedList classes
 */
 
 import java.util.*;
