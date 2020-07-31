@@ -143,7 +143,8 @@ public class ArrayList<E> extends AbstractList<E> {
         for (int i = 0; i < size; i++) {
             elementData[i] = null;
         }
-        size = 0;
+        super.clear();
+        //size = 0;
     }
     /*
     // post: appends all values in the given list to the end of this list
