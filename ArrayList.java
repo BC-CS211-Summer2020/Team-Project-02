@@ -41,7 +41,7 @@ public class ArrayList<E> extends AbstractList<E> {
     public ArrayList() {
         this(DEFAULT_CAPACITY);
     }
-
+    /*
     // post: returns the current number of elements in the list
     public int size() {
         return size;
@@ -89,7 +89,7 @@ public class ArrayList<E> extends AbstractList<E> {
     public boolean contains(E value) {
         return indexOf(value) >= 0;
     }
-
+    */
     // Diane Lansinger & Arash Yazdidoost
     // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
@@ -145,14 +145,14 @@ public class ArrayList<E> extends AbstractList<E> {
         }
         size = 0;
     }
-
+    /*
     // post: appends all values in the given list to the end of this list
     public void addAll(List<E> other) {
         for (E value : other) {
             add(value);
         }
     }
-
+    */
     // post: returns an iterator for this list
     public Iterator<E> iterator() {
         return new ArrayListIterator();
@@ -169,7 +169,7 @@ public class ArrayList<E> extends AbstractList<E> {
             elementData = Arrays.copyOf(elementData, newCapacity);
         }
     }
-
+    /*
     // post: throws an IndexOutOfBoundsException if the given index is
     // not a legal index of the current list
     private void checkIndex(int index) {
@@ -177,7 +177,7 @@ public class ArrayList<E> extends AbstractList<E> {
             throw new IndexOutOfBoundsException("index: " + index);
         }
     }
-
+    */
     private class ArrayListIterator implements Iterator<E> {
         private int position; // current position within the list
         private boolean removeOK; // whether it's okay to remove now
