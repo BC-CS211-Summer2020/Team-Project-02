@@ -10,6 +10,7 @@ public class ListClient3 {
         newList1.add(18);
         list1.addAll(newList1); // Testing addAll method within main method
         
+        System.out.println("TESTING AN ARRAYLIST: ");
         processList(list1);
         System.out.println();
 
@@ -20,6 +21,7 @@ public class ListClient3 {
         newList2.add(18);
         list2.addAll(newList2); // Testing addAll method within main method
         
+        System.out.println("TESTING A LINKEDLIST: ");
         processList(list2);
     }
 
