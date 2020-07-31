@@ -22,7 +22,7 @@
 
 public class ListClient3 {
     public static void main(String[] args) {
-        ArrayList<Integer> list1 = new ArrayList<Integer>();
+        List<Integer> list1 = new ArrayList<Integer>();
         List<Integer> newList1 = new ArrayList<Integer>();
 
         newList1.add(42);
@@ -33,7 +33,7 @@ public class ListClient3 {
         processList(list1);
         System.out.println();
 
-        LinkedList<Integer> list2 = new LinkedList<Integer>();
+        List<Integer> list2 = new LinkedList<Integer>();
         List<Integer> newList2 = new LinkedList<Integer>();
 
         newList2.add(42);
