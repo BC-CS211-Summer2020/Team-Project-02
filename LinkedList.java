@@ -31,7 +31,7 @@ public class LinkedList<E> extends AbstractList<E> {
         back = new ListNode<E>(null);
         clear();
     }
-
+    /*
     // post: returns the current number of elements in the list
     public int size() {
         return size;
@@ -86,7 +86,7 @@ public class LinkedList<E> extends AbstractList<E> {
     public boolean contains(E value) {
         return indexOf(value) >= 0;
     }
-
+    */
     // Diane Lansinger & Arash Yazdidoost
     // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
@@ -170,7 +170,7 @@ public class LinkedList<E> extends AbstractList<E> {
         }
         return current;
     }
-
+    /*
     // post: throws an IndexOutOfBoundsException if the given index is
     // not a legal index of the current list
     private void checkIndex(int index) {
@@ -178,7 +178,7 @@ public class LinkedList<E> extends AbstractList<E> {
             throw new IndexOutOfBoundsException("index: " + index);
         }
     }
-
+    */
     private static class ListNode<E> {
         public E data; // data stored in this node
         public ListNode<E> next; // link to next node in the list
