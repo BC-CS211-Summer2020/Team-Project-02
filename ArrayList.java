@@ -42,6 +42,7 @@ public class ArrayList<E> extends AbstractList<E> {
         this(DEFAULT_CAPACITY);
     }
     /*
+    // This method has been block commented out, will be handled via AbstractList
     // post: returns the current number of elements in the list
     public int size() {
         return size;
@@ -54,6 +55,7 @@ public class ArrayList<E> extends AbstractList<E> {
         return elementData[index];
     }
 
+    // This method has been block commented out, will be handled via AbstractList
     // post: creates a comma-separated, bracketed version of the list
     public String toString() {
         if (size == 0) {
@@ -68,6 +70,7 @@ public class ArrayList<E> extends AbstractList<E> {
         }
     }
 
+    // This method has been block commented out, will be handled via AbstractList
     // post : returns the position of the first occurrence of the given
     // value (-1 if not found)
     public int indexOf(E value) {
@@ -79,11 +82,13 @@ public class ArrayList<E> extends AbstractList<E> {
         return -1;
     }
 
+    // This method has been block commented out, will be handled via AbstractList
     // post: returns true if list is empty, false otherwise
     public boolean isEmpty() {
         return size == 0;
     }
 
+    // This method has been block commented out, will be handled via AbstractList
     // post: returns true if the given value is contained in the list,
     // false otherwise
     public boolean contains(E value) {
@@ -147,6 +152,7 @@ public class ArrayList<E> extends AbstractList<E> {
         //size = 0;
     }
     /*
+    // This method has been block commented out, will be handled via AbstractList
     // post: appends all values in the given list to the end of this list
     public void addAll(List<E> other) {
         for (E value : other) {
@@ -171,6 +177,7 @@ public class ArrayList<E> extends AbstractList<E> {
         }
     }
     /*
+    // This method has been block commented out, will be handled via AbstractList
     // post: throws an IndexOutOfBoundsException if the given index is
     // not a legal index of the current list
     private void checkIndex(int index) {

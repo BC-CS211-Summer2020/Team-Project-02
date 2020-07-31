@@ -32,11 +32,13 @@ public class LinkedList<E> extends AbstractList<E> {
         clear();
     }
     /*
+    // This method has been block commented out, will be handled via AbstractList
     // post: returns the current number of elements in the list
     public int size() {
         return size;
     }
 
+    // This method has been block commented out, will be handled via AbstractList
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: returns the value at the given index in the list
     public E get(int index) {
@@ -45,6 +47,7 @@ public class LinkedList<E> extends AbstractList<E> {
         return current.data;
     }
 
+    // This method has been block commented out, will be handled via AbstractList
     // post: creates a comma-separated, bracketed version of the list
     public String toString() {
         if (size == 0) {
@@ -61,6 +64,7 @@ public class LinkedList<E> extends AbstractList<E> {
         }
     }
 
+    // This method has been block commented out, will be handled via AbstractList
     // post : returns the position of the first occurrence of the given
     // value (-1 if not found)
     public int indexOf(E value) {
@@ -81,6 +85,7 @@ public class LinkedList<E> extends AbstractList<E> {
         return size == 0;
     }
 
+    // This method has been block commented out, will be handled via AbstractList
     // post: returns true if the given value is contained in the list,
     // false otherwise
     public boolean contains(E value) {
@@ -172,6 +177,7 @@ public class LinkedList<E> extends AbstractList<E> {
         return current;
     }
     /*
+    // This method has been block commented out, will be handled via AbstractList
     // post: throws an IndexOutOfBoundsException if the given index is
     // not a legal index of the current list
     private void checkIndex(int index) {
