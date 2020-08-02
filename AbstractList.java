@@ -22,16 +22,9 @@ import java.util.*;
 // Melina Perraut and Angela Zou - wrote skeleton code & overlapping methods for AbstractList class
 // Diane Lansinger - implemented List<E>
 public abstract class AbstractList<E> implements List<E> {
-
-	/*
-	 * methods: public int size(); public E get(int index); public int indexOf(E
-	 * value); public boolean isEmpty(); public boolean contains(E value); public
-	 * void add(E value); public void add(int index, E value); public void
-	 * remove(int index); public void set(int index, E value); public void clear();
-	 * addAll(list<E> name); checkIndex(int index); class iterator & iterator();
-	 */
 	protected int size;
 
+	// Melina Perraut, Angela Zou
 	// post: returns the current number of elements in the list
 	public int size() {
 		return size;
@@ -82,11 +75,13 @@ public abstract class AbstractList<E> implements List<E> {
 		}
 	}
 
+	// Melina Perraut, Angela Zou
 	// post: returns true if list is empty, false otherwise
 	public boolean isEmpty() { // returns true if empty and false if not empty
 		return size == 0;
 	}
 
+	// Melina Perraut, Angela Zou
 	// post: returns true if the given value is contained in the list,
 	// false otherwise
 	public boolean contains(E value) { // returns true if the list contains the given value and false if it does not
@@ -111,6 +106,7 @@ public abstract class AbstractList<E> implements List<E> {
 		size++;
 	}
 
+	// Melina Perraut, Angela Zou
 	// post: appends all values in the given list to the end of this list
 	public void addAll(List<E> other) {
 		for (E value : other) {
@@ -140,12 +136,14 @@ public abstract class AbstractList<E> implements List<E> {
 		checkIndex(index);
 	}
 
+	// Melina Perraut, Angela Zou
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post: list is empty
-	public void clear() { // Melina & Angie 
+	public void clear() { 
 		size = 0;
 	}
 
+	// Melina Perraut, Angela Zou
 	// post: throws an IndexOutOfBoundsException if the given index is
 	// not a legal index of the current list
 	private void checkIndex(int index) {
