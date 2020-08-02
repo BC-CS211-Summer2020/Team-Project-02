@@ -145,7 +145,7 @@ public abstract class AbstractList<E> implements List<E> {
 
 	// *Substantially differs between ArrayList & LinkedList classes
 	// post: list is empty
-	public void clear() { // Melina & Angie 
+	public void clear() { // Melina & Angie
 		size = 0;
 	}
 

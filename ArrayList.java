@@ -42,59 +42,33 @@ public class ArrayList<E> extends AbstractList<E> {
         this(DEFAULT_CAPACITY);
     }
     /*
-    // This method has been block commented out, will be handled via AbstractList
-    // post: returns the current number of elements in the list
-    public int size() {
-        return size;
-    }
-
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: returns the value at the given index in the list
-    public E get(int index) {
-        checkIndex(index);
-        return elementData[index];
-    }
-
-    // This method has been block commented out, will be handled via AbstractList
-    // post: creates a comma-separated, bracketed version of the list
-    public String toString() {
-        if (size == 0) {
-            return "[]";
-        } else {
-            String result = "[" + elementData[0];
-            for (int i = 1; i < size; i++) {
-                result += ", " + elementData[i];
-            }
-            result += "]";
-            return result;
-        }
-    }
-
-    // This method has been block commented out, will be handled via AbstractList
-    // post : returns the position of the first occurrence of the given
-    // value (-1 if not found)
-    public int indexOf(E value) {
-        for (int i = 0; i < size; i++) {
-            if (elementData[i].equals(value)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    // This method has been block commented out, will be handled via AbstractList
-    // post: returns true if list is empty, false otherwise
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    // This method has been block commented out, will be handled via AbstractList
-    // post: returns true if the given value is contained in the list,
-    // false otherwise
-    public boolean contains(E value) {
-        return indexOf(value) >= 0;
-    }
-    */
+     * // This method has been block commented out, will be handled via AbstractList
+     * // post: returns the current number of elements in the list public int size()
+     * { return size; }
+     * 
+     * // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not) //
+     * post: returns the value at the given index in the list public E get(int
+     * index) { checkIndex(index); return elementData[index]; }
+     * 
+     * // This method has been block commented out, will be handled via AbstractList
+     * // post: creates a comma-separated, bracketed version of the list public
+     * String toString() { if (size == 0) { return "[]"; } else { String result =
+     * "[" + elementData[0]; for (int i = 1; i < size; i++) { result += ", " +
+     * elementData[i]; } result += "]"; return result; } }
+     * 
+     * // This method has been block commented out, will be handled via AbstractList
+     * // post : returns the position of the first occurrence of the given // value
+     * (-1 if not found) public int indexOf(E value) { for (int i = 0; i < size;
+     * i++) { if (elementData[i].equals(value)) { return i; } } return -1; }
+     * 
+     * // This method has been block commented out, will be handled via AbstractList
+     * // post: returns true if list is empty, false otherwise public boolean
+     * isEmpty() { return size == 0; }
+     * 
+     * // This method has been block commented out, will be handled via AbstractList
+     * // post: returns true if the given value is contained in the list, // false
+     * otherwise public boolean contains(E value) { return indexOf(value) >= 0; }
+     */
     // Diane Lansinger & Arash Yazdidoost
     // This method has been block commented out, will be handled via AbstractList
     // post: appends the given value to the end of the list
@@ -149,17 +123,14 @@ public class ArrayList<E> extends AbstractList<E> {
             elementData[i] = null;
         }
         super.clear();
-        //size = 0;
+        // size = 0;
     }
+
     /*
-    // This method has been block commented out, will be handled via AbstractList
-    // post: appends all values in the given list to the end of this list
-    public void addAll(List<E> other) {
-        for (E value : other) {
-            add(value);
-        }
-    }
-    */
+     * // This method has been block commented out, will be handled via AbstractList
+     * // post: appends all values in the given list to the end of this list public
+     * void addAll(List<E> other) { for (E value : other) { add(value); } }
+     */
     // post: returns an iterator for this list
     public Iterator<E> iterator() {
         return new ArrayListIterator();
@@ -176,16 +147,14 @@ public class ArrayList<E> extends AbstractList<E> {
             elementData = Arrays.copyOf(elementData, newCapacity);
         }
     }
+
     /*
-    // This method has been block commented out, will be handled via AbstractList
-    // post: throws an IndexOutOfBoundsException if the given index is
-    // not a legal index of the current list
-    private void checkIndex(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("index: " + index);
-        }
-    }
-    */
+     * // This method has been block commented out, will be handled via AbstractList
+     * // post: throws an IndexOutOfBoundsException if the given index is // not a
+     * legal index of the current list private void checkIndex(int index) { if
+     * (index < 0 || index >= size) { throw new IndexOutOfBoundsException("index: "
+     * + index); } }
+     */
     private class ArrayListIterator implements Iterator<E> {
         private int position; // current position within the list
         private boolean removeOK; // whether it's okay to remove now
