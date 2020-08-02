@@ -8,7 +8,7 @@
  * Angie Zou (code co-lead)
  * 
  * Team Project #2
- * Building Java Programs (Reges & Step, 5th edition)
+ * Building Java Programs (Reges & Stepp, 5th edition)
  * Ch. 16, p. 1027, Programming Exercise #3
  * TeamProject02
  *
@@ -49,7 +49,6 @@ public abstract class AbstractList<E> implements List<E> {
 			if (idx == index)
 				return item;
 		}
-
 		return null;
 	}
 
@@ -64,7 +63,6 @@ public abstract class AbstractList<E> implements List<E> {
 			if (value.equals(iter.next()))
 				return index;
 		}
-
 		return -1;
 	}
 
@@ -127,7 +125,6 @@ public abstract class AbstractList<E> implements List<E> {
 	public void remove(int index) {
 		checkIndex(index);
 		Iterator<E> i = iterator();
-
 		while (index-- > 0) {
 			i.next();
 		}
