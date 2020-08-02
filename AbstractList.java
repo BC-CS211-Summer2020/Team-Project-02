@@ -22,7 +22,7 @@ import java.util.*;
 // Melina Perraut and Angela Zou - wrote skeleton code & overlapping methods for AbstractList class
 // Diane Lansinger - implemented List<E>
 public abstract class AbstractList<E> implements List<E> {
-	protected int size;
+	protected int size; // Made protected so it can be viewed & used by child classes
 
 	// Melina Perraut, Angela Zou
 	// post: returns the current number of elements in the list
