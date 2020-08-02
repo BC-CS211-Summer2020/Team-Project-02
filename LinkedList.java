@@ -8,7 +8,7 @@
  * Angie Zou (code co-lead)
  * 
  * Team Project #2
- * Building Java Programs (Reges & Step, 5th edition)
+ * Building Java Programs (Reges & Stepp, 5th edition)
  * Ch. 16, p. 1027, Programming Exercise #3
  * TeamProject02
  *
