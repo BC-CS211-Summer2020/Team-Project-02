@@ -76,6 +76,5 @@ public class ListClient3 {
         list.clear();
         System.out.println("Altered list after clearing all values: " + list.toString());
         System.out.println("Is the list currently empty? " + list.isEmpty());
-
     }
 }
