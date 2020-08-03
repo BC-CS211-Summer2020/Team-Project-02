@@ -31,51 +31,13 @@ public class LinkedList<E> extends AbstractList<E> {
         back = new ListNode<E>(null);
         clear();
     }
-    /*
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: returns the current number of elements in the list public int size()
-     * { return size; }
-     * 
-     * // This method has been block commented out, will be handled via AbstractList
-     * // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not) //
-     * post: returns the value at the given index in the list public E get(int
-     * index) { checkIndex(index); ListNode<E> current = nodeAt(index); return
-     * current.data; }
-     * 
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: creates a comma-separated, bracketed version of the list public
-     * String toString() { if (size == 0) { return "[]"; } else { String result =
-     * "[" + front.next.data; ListNode<E> current = front.next.next; while (current
-     * != back) { result += ", " + current.data; current = current.next; } result +=
-     * "]"; return result; } }
-     * 
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post : returns the position of the first occurrence of the given // value
-     * (-1 if not found) public int indexOf(E value) { int index = 0; ListNode<E>
-     * current = front.next; while (current != back) { if
-     * (current.data.equals(value)) { return index; } index++; current =
-     * current.next; } return -1; }
-     * 
-     * // post: returns true if list is empty, false otherwise public boolean
-     * isEmpty() { return size == 0; }
-     * 
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: returns true if the given value is contained in the list, // false
-     * otherwise public boolean contains(E value) { return indexOf(value) >= 0; }
-     */
-    // Diane Lansinger & Arash Yazdidoost
-    // This method has been block commented out, will be handled via AbstractList
-    // post: appends the given value to the end of the list
-    /*
-     * public void add(E value) { add(size, value); }
-     */
 
     // Diane Lansinger & Arash Yazdidoost
     // pre: 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
     // values right
     public void add(int index, E value) {
-        // block commented out below, will be handled via AbstractList
+        // commented out below, will be handled via AbstractList
         /*
          * if (index < 0 || index > size) { throw new
          * IndexOutOfBoundsException("index: " + index); }
@@ -95,16 +57,6 @@ public class LinkedList<E> extends AbstractList<E> {
             add(value);
         }
     }
-
-    // Diane Lansinger & Arash Yazdidoost
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: removes value at the given index, shifting subsequent values left
-    // block commented out below, will be handled via AbstractList
-    /*
-     * public void remove(int index) { checkIndex(index); super.remove(index); //
-     * super calls AbstractList ListNode<E> current = nodeAt(index - 1);
-     * current.next = current.next.next; current.next.prev = current; size--; }
-     */
 
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: replaces the value at the given index with the given value
@@ -148,13 +100,6 @@ public class LinkedList<E> extends AbstractList<E> {
         return current;
     }
 
-    /*
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: throws an IndexOutOfBoundsException if the given index is // not a
-     * legal index of the current list private void checkIndex(int index) { if
-     * (index < 0 || index >= size()) { throw new
-     * IndexOutOfBoundsException("index: " + index); } }
-     */
     private static class ListNode<E> {
         public E data; // data stored in this node
         public ListNode<E> next; // link to next node in the list
@@ -212,11 +157,67 @@ public class LinkedList<E> extends AbstractList<E> {
              * ListNode<E> prev2 = current.prev.prev; prev2.next = current; current.prev =
              * prev2;
              */
-            /* size--; */ // block commented out, will be handled via AbstractList
+            /* size--; */ // commented out, will be handled via AbstractList
             ListNode<E> prev = current.prev;
             prev.next = current.next;
             current.next.prev = prev;
             removeOK = false;
         }
     }
+    /*
+     * The following methods were commented out once we determined how to handle
+     * them via the AbstractList class. Keeping here for historical record.
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post: returns the current number of elements in the list public int size() {
+     * return size; }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * pre : 0 <= index < size() (throws IndexOutOfBoundsException if not) // post:
+     * returns the value at the given index in the list public E get(int index) {
+     * checkIndex(index); ListNode<E> current = nodeAt(index); return current.data;
+     * }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post: creates a comma-separated, bracketed version of the list public String
+     * toString() { if (size == 0) { return "[]"; } else { String result = "[" +
+     * front.next.data; ListNode<E> current = front.next.next; while (current !=
+     * back) { result += ", " + current.data; current = current.next; } result +=
+     * "]"; return result; } }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post : returns the position of the first occurrence of the given // value (-1
+     * if not found) public int indexOf(E value) { int index = 0; ListNode<E>
+     * current = front.next; while (current != back) { if
+     * (current.data.equals(value)) { return index; } index++; current =
+     * current.next; } return -1; }
+     * 
+     * // post: returns true if list is empty, false otherwise public boolean
+     * isEmpty() { return size == 0; }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post: returns true if the given value is contained in the list, // false
+     * otherwise public boolean contains(E value) { return indexOf(value) >= 0; }
+     *
+     * // Diane Lansinger & Arash Yazdidoost // This method has been commented out,
+     * will be handled via AbstractList // post: appends the given value to the end
+     * of the list
+     *
+     * public void add(E value) { add(size, value); }
+     * 
+     * // Diane Lansinger & Arash Yazdidoost // pre : 0 <= index < size() (throws
+     * IndexOutOfBoundsException if not) // post: removes value at the given index,
+     * shifting subsequent values left // commented out below, will be handled via
+     * AbstractList
+     *
+     * public void remove(int index) { checkIndex(index); super.remove(index); //
+     * super calls AbstractList ListNode<E> current = nodeAt(index - 1);
+     * current.next = current.next.next; current.next.prev = current; size--; } * //
+     * This method has been commented out, will be handled via AbstractList // post:
+     * throws an IndexOutOfBoundsException if the given index is // not a legal
+     * index of the current list private void checkIndex(int index) { if (index < 0
+     * || index >= size()) { throw new IndexOutOfBoundsException("index: " + index);
+     * } }
+     */
+
 }

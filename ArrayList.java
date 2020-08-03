@@ -41,48 +41,13 @@ public class ArrayList<E> extends AbstractList<E> {
     public ArrayList() {
         this(DEFAULT_CAPACITY);
     }
-    /*
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: returns the current number of elements in the list public int size()
-     * { return size; }
-     * 
-     * // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not) //
-     * post: returns the value at the given index in the list public E get(int
-     * index) { checkIndex(index); return elementData[index]; }
-     * 
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: creates a comma-separated, bracketed version of the list public
-     * String toString() { if (size == 0) { return "[]"; } else { String result =
-     * "[" + elementData[0]; for (int i = 1; i < size; i++) { result += ", " +
-     * elementData[i]; } result += "]"; return result; } }
-     * 
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post : returns the position of the first occurrence of the given // value
-     * (-1 if not found) public int indexOf(E value) { for (int i = 0; i < size;
-     * i++) { if (elementData[i].equals(value)) { return i; } } return -1; }
-     * 
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: returns true if list is empty, false otherwise public boolean
-     * isEmpty() { return size == 0; }
-     * 
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: returns true if the given value is contained in the list, // false
-     * otherwise public boolean contains(E value) { return indexOf(value) >= 0; }
-     */
-    // Diane Lansinger & Arash Yazdidoost
-    // This method has been block commented out, will be handled via AbstractList
-    // post: appends the given value to the end of the list
-    /*
-     * public void add(E value) { ensureCapacity(size + 1); elementData[size] =
-     * value; //super.add(value); size++; }
-     */
 
     // Diane Lansinger & Arash Yazdidoost
     // pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
     // values right
     public void add(int index, E value) {
-        // block commented out below, will be handled via AbstractList
+        // commented out below, will be handled via AbstractList
         /*
          * if (index < 0 || index > size) { throw new
          * IndexOutOfBoundsException("index: " + index); }
@@ -98,20 +63,10 @@ public class ArrayList<E> extends AbstractList<E> {
     }
 
     // Diane Lansinger & Arash Yazdidoost
-    // block commented out below, moved key part to ArrayList Interator
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: removes value at the given index, shifting subsequent values left
-    /*
-     * public void remove(int index) { checkIndex(index); for (int i = index; i <
-     * size - 1; i++) { elementData[i] = elementData[i + 1]; } elementData[size - 1]
-     * = null; size--; }
-     */
-
-    // Diane Lansinger & Arash Yazdidoost
     // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
     // post: replaces the value at the given index with the given value
     public void set(int index, E value) {
-        // block commented out below, will be handled via AbstractList
+        // commented out below, will be handled via AbstractList
         /* checkIndex(index); */
         super.set(index, value); // super calls AbstractList
         elementData[index] = value;
@@ -126,11 +81,6 @@ public class ArrayList<E> extends AbstractList<E> {
         // size = 0;
     }
 
-    /*
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: appends all values in the given list to the end of this list public
-     * void addAll(List<E> other) { for (E value : other) { add(value); } }
-     */
     // post: returns an iterator for this list
     public Iterator<E> iterator() {
         return new ArrayListIterator();
@@ -148,13 +98,6 @@ public class ArrayList<E> extends AbstractList<E> {
         }
     }
 
-    /*
-     * // This method has been block commented out, will be handled via AbstractList
-     * // post: throws an IndexOutOfBoundsException if the given index is // not a
-     * legal index of the current list private void checkIndex(int index) { if
-     * (index < 0 || index >= size) { throw new IndexOutOfBoundsException("index: "
-     * + index); } }
-     */
     private class ArrayListIterator implements Iterator<E> {
         private int position; // current position within the list
         private boolean removeOK; // whether it's okay to remove now
@@ -197,4 +140,59 @@ public class ArrayList<E> extends AbstractList<E> {
             removeOK = false;
         }
     }
+
+    /*
+     * The following methods were commented out once we determined how to handle
+     * them via the AbstractList class. Keeping here for historical record.
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post: returns the current number of elements in the list public int size() {
+     * return size; }
+     * 
+     * // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not) //
+     * post: returns the value at the given index in the list public E get(int
+     * index) { checkIndex(index); return elementData[index]; }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post: creates a comma-separated, bracketed version of the list public String
+     * toString() { if (size == 0) { return "[]"; } else { String result = "[" +
+     * elementData[0]; for (int i = 1; i < size; i++) { result += ", " +
+     * elementData[i]; } result += "]"; return result; } }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post : returns the position of the first occurrence of the given // value (-1
+     * if not found) public int indexOf(E value) { for (int i = 0; i < size; i++) {
+     * if (elementData[i].equals(value)) { return i; } } return -1; }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post: returns true if list is empty, false otherwise public boolean isEmpty()
+     * { return size == 0; }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post: returns true if the given value is contained in the list, // false
+     * otherwise public boolean contains(E value) { return indexOf(value) >= 0; }
+     *
+     * //Diane Lansinger & Arash Yazdidoost // This method has been commented out,
+     * will be handled via AbstractList // post: appends the given value to the end
+     * of the list public void add(E value) { ensureCapacity(size + 1);
+     * elementData[size] = value; //super.add(value); size++; }
+     * 
+     * // Diane Lansinger & Arash Yazdidoost // commented out, moved key part to
+     * ArrayList Interator // pre : 0 <= index < size() (throws
+     * IndexOutOfBoundsException if not) // post: removes value at the given index,
+     * shifting subsequent values left public void remove(int index) {
+     * checkIndex(index); for (int i = index; i < size - 1; i++) { elementData[i] =
+     * elementData[i + 1]; } elementData[size - 1] = null; size--; }
+     * 
+     * // This method has been commented out, will be handled via AbstractList //
+     * post: appends all values in the given list to the end of this list public
+     * void addAll(List<E> other) { for (E value : other) { add(value); } }
+     *
+     * // This section has been commented out, will be handled via AbstractList //
+     * post: throws an IndexOutOfBoundsException if the given index is // not a
+     * legal index of the current list private void checkIndex(int index) { if
+     * (index < 0 || index >= size) { throw new IndexOutOfBoundsException("index: "
+     * + index); } }
+     */
+
 }
